@@ -7,13 +7,6 @@
     "phone": "",
     "website": "https://jcamarao.github.io",
     "summary": "I am computer science student at the University of Hawaii at Manoa aiming for a B.S expecting to graduate in Spring, 2021.",
-    "location": {
-      "address": "",
-      "postalCode": "96797",
-      "city": "Waipahu",
-      "countryCode": "USA",
-      "region": "Hawaii"
-    },
     "profiles": [
       {
         "network": "github",
@@ -26,109 +19,5 @@
         "url": "http://linkedin.com/in/jcamarao"
       }
     ]
-  },
-  "interests": [
-    {
-      "name": "Software Development",
-      "keywords": [
-      ]
-    },
-    {
-      "name": "Cyber Security",
-      "keywords": [
-      ]
-    },
-    {
-      "name": "Artificial Intelligence",
-      "keywords": [
-      ]
-    }
-  ],
-  "skills": [
-    {
-      "name": "Languages and Frameworks",
-      "level": "",
-      "keywords": [
-        "Java",
-        "Javascript"
-      ]
-    },
-    {
-      "name": "Toolsets/OS",
-      "level": "",
-      "keywords": [
-        "MacOS",
-        "Git/GitHub",
-        "ReactJS",
-        "Meteor"
-      ]
-    }
-  ],
-  "education": [
-     {
-      "institution": "University of Hawaii at Manoa, Honolulu, HI",
-      "area": "Computer Science (expected Fall, 2021)",
-      "studyType": "B.S.",
-      "startDate": "2019-08-26",
-      "endDate": "Present",
-      "gpa": "",
-      "courses": [
-      ]
-    },
-    {
-      "institution": "Leeward Community College, Pearl City, HI",
-      "area": "Liberal Arts",
-      "studyType": "A.A.",
-      "startDate": "2017-08-30",
-      "endDate": "2019-05-10",
-      "gpa": "4.0",
-      "courses": [
-      ]
-    }
-  ],
-  "work": [
-     {
-      "company": "Times Supermarkets, Millilani",
-      "position": "Pastry Clerk",
-      "website": "https://www.timessupermarkets.com/mililani-times/",
-      "startDate": "2019-07-31",
-      "endDate": "Present",
-      "summary": "Trained cashier and helps any customer if needed."
-    },
-    {
-      "company": "Kumon, North America",
-      "position": "Assistant Tutor",
-      "website": "https://www.kumon.com/pearl-city-hi",
-      "startDate": "2017-06-30",
-      "endDate": "Present",
-      "summary": "Assist kids ranging from elementary school to high school in math and reading"
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "",
-      "website": "",
-      "position": "Professional organization involvement",
-      "startDate": "",
-      "endDate": "",
-      "summary": "",
-      "highlights": [
-        "Member, Phi Theta Kappa, 2018-Present"
-      ]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Leeward CC Achievement High School Scholarship",
-      "date": "2017-2018",
-      "awarder": "Leeward Community College",
-      "summary": "Scholarships awarded to incoming freshmen who are recommended for consideration of the award by staff members."
-    }
-  ],
-  "references": [
-    {
-      "name": "Available upon request",
-      "reference": ""
-    }
-  ]
+  }
 }
