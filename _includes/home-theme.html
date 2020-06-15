@@ -1,54 +1,85 @@
-<!-- Home page design with large image to left of bio info. -->
-{% assign essay_pages = site.pages | where: "type", "essay"  | where_exp: "page", "page.draft != true" %}
-{% assign project_pages = site.pages | where: "type", "project" | where_exp: "page", "page.draft != true" %}
-{% assign num_essays = essay_pages.size %}
-{% assign num_projects = project_pages.size %}
-
-<div class="wrapper">
- 
-  <div data-text></div>
-  <span class="item">Computer Science Student</span>
-  <span class="item">Aspiring Software Engineer</span>
-  <h2>Hi, I'm Jake Camarao</h2>
-
-  <script>
-    let wrapper;
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-async function writingAll(stringTarget, container) {
-  wrapper = document.querySelector('[' + container + ']');
-  const stringsContainer = document.getElementsByClassName(stringTarget);
-
-  while (wrapper) {
-    for (i = 0; i < stringsContainer.length; i++) {
-      const string = stringsContainer[i].textContent;
-      await write(string);
-      await sleep(1000);
-      await erase();
-      await sleep(1000);
-    };
-  }
-};
-
-async function write(text) {
-  let index = 0;
-  while (index < text.length) {
-    const timeout = 100;
-    await sleep(timeout);
-    index++;
-    wrapper.innerHTML = text.substring(0, index);
-  }
-};
-
-
-async function erase() {
-  while (wrapper.textContent.length) {
-    const timeout = 100;
-    await sleep(timeout);
-    wrapper.textContent = wrapper.textContent.substring(0, wrapper.textContent.length - 2);
-  }
-};
-
-writingAll('item', 'data-text');
-  </script>
+<!-- Central page for my portfolio-->
+<!-- This is the top bar on the top that is fixed and attached while scrolling down -->
+<div id="ui item menu">
+  <div align="right" id="right item">
+    <a href="{{ site.baseurl}}/">
+      <i id="menu-icon" class="big align justify icon"></i>
+    </a>
+  </div>
 </div>
+
+<!-- This component that holds the primary view once clicked onto the page -->
+<div class="ui fluid landing container">
+  <div id="main-component">
+    <div class="wrapper">
+    
+      <div data-text></div>
+      <span class="item">Computer Science Student</span>
+      <span class="item">Aspiring Software Engineer</span>
+      <h2>Hi, I'm Jake Camarao</h2>
+
+  </div>
+  </div>
+</div>
+
+<!-- This componenet is what holds the "about me" portion -->
+<div class="ui fluid about container">
+  <div id="about-component">
+    <div class="ui fluid container">
+      <h1>Why is this not below the other</h1>
+    </div>
+  </div>
+</div>
+
+
+<!-- This component should primarily hold the project portion of what I have completed thus far -->
+<div class="ui fluid container">
+  <div id="about-component">
+    <div class="ui fluid container">
+      <h1>Why is this not below the other2</h1>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- this allows for the write-and-erase text to constantly switch out -->
+<script>
+  let wrapper;
+    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+    async function writingAll(stringTarget, container) {
+      wrapper = document.querySelector('[' + container + ']');
+      const stringsContainer = document.getElementsByClassName(stringTarget);
+
+      while (wrapper) {
+        for (i = 0; i < stringsContainer.length; i++) {
+          const string = stringsContainer[i].textContent;
+          await write(string);
+          await sleep(1000);
+          await erase();
+          await sleep(1000);
+        };
+      }
+    };
+
+    async function write(text) {
+      let index = 0;
+      while (index < text.length) {
+        const timeout = 100;
+        await sleep(timeout);
+        index++;
+        wrapper.innerHTML = text.substring(0, index);
+      }
+    };
+
+
+    async function erase() {
+      while (wrapper.textContent.length) {
+        const timeout = 100;
+        await sleep(timeout);
+        wrapper.textContent = wrapper.textContent.substring(0, wrapper.textContent.length - 2);
+      }
+    };
+
+    writingAll('item', 'data-text');
+</script>

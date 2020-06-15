@@ -20,7 +20,7 @@
 .menu-buttons {
   font-family: 'Quicksand', serif !important;
   font-size: 20px;
-  color: #000 !important;
+  color: white !important;
   float: right;
   padding-left: 10px;
   padding-right: 10px;
@@ -28,24 +28,24 @@
 }
 
 p.menu-buttons:hover {
-  color: #d5ede4 !important;
+  color: orange !important;
 }
 
 .big.icon:hover {
-  color: #d5ede4 !important;
+  color: orange !important;
 }
 
 .big.icon {
-  color: #000000 !important;
+  color: white !important;
   padding-top: 10px;
-  padding-left: 20px;
+  padding-right: 30px;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~ //
 //  HOME PAGE CSS STARTS //
 // Customize the background color
 body {
-  background-color: #FFFFFF; //white
+  background-color: #3a3a3a;
   //background-color: #E8E8E8;
   //background: linear-gradient(to bottom, #99ccff 0%, #99ffcc 100%);
   background-repeat: no-repeat;
@@ -128,14 +128,14 @@ body {
 // Customize the menubar color
 .ui.menu {
   // background: $background-start;]
-  background : #7a8999; // grayish
+  background: transparent !important;
+  scroll-behavior: smooth;
 }
 
 
 // write-and-erase test
 .wrapper {
   padding: 10px;
-  margin: 0 auto;
   width: 500px;
   text-align: center;
   position: absolute;
@@ -151,7 +151,7 @@ body {
   h2 {
     font-size: 30px;
     margin: 0;
-    color: #3a3a3a;
+    color: white;
     text-align: left;
   }
 
@@ -189,4 +189,16 @@ content: "";
   to {
     opacity: 0;
   }
+}
+
+.about-component {
+  background-color: white !important;
+}
+
+.ui.fluid.landing.container {
+  height: 100vh !important;
+}
+
+.ui.fluid.about.container {
+  background-color: white;
 }
