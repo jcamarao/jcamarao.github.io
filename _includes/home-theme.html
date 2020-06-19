@@ -1,6 +1,7 @@
 <!-- Central page for my portfolio-->
+
 <!-- This is the top bar on the top that is fixed and attached while scrolling down -->
-<div id="ui item menu">
+<div class="ui item menu">
   <div align="right" id="right item">
     <a href="{{ site.baseurl}}/">
       <i id="menu-icon" class="big align justify icon"></i>
@@ -10,20 +11,20 @@
 
 <!-- This component that holds the primary view once clicked onto the page -->
 <div class="ui fluid landing container">
-  <div id="main-component">
-      <div>
+  <div>
+    <div id="main-component">
+      <!-- This prat of the main-component is responsibel for the moon and stars background -->
         <div class="stars"></div>
         <div class="moon"></div>
+        <div class="twinkl"></div>
+        <!-- This part of the main-component is responsible for the write and erase   -->
         <div class="wrapper">
-
-          <div data-text></div>
-          <span class="item">Computer Science Student</span>
-          <span class="item">Aspiring Software Engineer</span>
-          <h2>Hi, I'm Jake Camarao</h2>
-    
-      </div>
-            <div class="twinkl"></div>
-      </div>
+            <div data-text></div>
+            <span class="item">Computer Science Student</span>
+            <span class="item">Aspiring Software Engineer</span>
+            <h2>Hi, I'm Jake Camarao</h2>
+        </div>
+    </div>
 
   </div>
 </div>
@@ -61,9 +62,9 @@
         for (i = 0; i < stringsContainer.length; i++) {
           const string = stringsContainer[i].textContent;
           await write(string);
-          await sleep(1000);
+          await sleep(1500);
           await erase();
-          await sleep(1000);
+          await sleep(1500);
         };
       }
     };
