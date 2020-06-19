@@ -18,10 +18,6 @@
 // MENU CSS STARTS //
 // ~~~~~~~~~~~~~~~ //
 
-.ui.item.menu {
-  z-index: 1;
-}
-
 .menu-buttons {
   font-family: 'Quicksand', serif !important;
   font-size: 20px;
@@ -40,10 +36,6 @@ p.menu-buttons:hover {
 
 .big.icon:hover {
   color: orange !important;
-}
-
-#menu-icon {
-  z-index: 1;
 }
 
 .big.icon {
