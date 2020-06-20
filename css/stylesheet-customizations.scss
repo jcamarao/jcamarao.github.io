@@ -129,13 +129,25 @@ body {
   max-width: 900px !important;
 }
 
-// Customize the menubar color
-.ui.menu {
-  // background: $background-start;]
-  background: transparent !important;
-  scroll-behavior: smooth;
-}
+/*
+ * Buttons??
+ *
+ */
 
+ .ui.inverted.button {
+   font-family: 'Open Sans', 'Helvetica Neue';
+   position: absolute;
+   color: orange;
+   top: 80px;
+   left: 10px;
+ }
+
+ .ui.button {
+   font-family: 'Open Sans', 'Helvetica Neue';
+   position: absolute;
+   top: 80px;
+   left: 140px;
+ }
 
 /*
  * css that the write and erase text
@@ -162,6 +174,17 @@ body {
     margin: 0;
     color: white;
     text-align: left;
+    animation-name: slideup;
+    animation-duration: 2s;
+  }
+
+  @keyframes slideup {
+    from {
+      margin-bottom: 200%;
+    }
+    to {
+      margin-bottom: 0.1%;
+    }
   }
 
   > div {
@@ -228,8 +251,19 @@ content: "";
 	border-radius:50%;	
 	background:white;
 	opacity:0.9;			
-	box-shadow: 0px 0px 40px 15px white;
+  box-shadow: 0px 0px 40px 15px white;
+  animation-duration: 2s;
+  animation-name: slidein;
   z-index:1;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 105%;
+  }
+  to {
+    margin-left: 46.5%;
+  }
 }
 
 .stars, .twinkl {
@@ -263,4 +297,3 @@ content: "";
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
 }
-
