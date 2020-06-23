@@ -134,7 +134,7 @@ body {
  *
  */
 
- .ui.inverted.button {
+ .ui.inverted.large.button {
    font-family: 'Open Sans', 'Helvetica Neue';
    position: absolute;
    color: orange;
@@ -142,11 +142,11 @@ body {
    left: 10px;
  }
 
- .ui.button {
+ .ui.large.button {
    font-family: 'Open Sans', 'Helvetica Neue';
    position: absolute;
    top: 80px;
-   left: 140px;
+   left: 160px;
  }
 
 /*
@@ -163,6 +163,8 @@ body {
   transform: translate(-50%, -50%);
   // z-index allows the wrapper to be at the very top above the animation of stars and moon
   z-index:1;
+  animation-name: slideup;
+  animation-duration: 2s;
 
   .item {
     visibility: hidden;
@@ -174,16 +176,14 @@ body {
     margin: 0;
     color: white;
     text-align: left;
-    animation-name: slideup;
-    animation-duration: 2s;
   }
 
   @keyframes slideup {
     from {
-      margin-bottom: 200%;
+      margin-top: 50%;
     }
     to {
-      margin-bottom: 0.1%;
+      margin-top: 0.1%;
     }
   }
 
@@ -259,10 +259,10 @@ content: "";
 
 @keyframes slidein {
   from {
-    margin-left: 105%;
+    margin-bottom: 50%;
   }
   to {
-    margin-left: 46.5%;
+    margin-bottom: 12.7%;
   }
 }
 
