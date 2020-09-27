@@ -1,0 +1,19 @@
+---
+layout: essay
+type: essay
+title: Restarting, Again
+# All dates must be YYYY-MM-DD format!
+date: 2019-09-05
+labels:
+  - JavaScript
+  - Programming
+---
+
+# New Paths #
+As someone who has jumped into this field with no prior knowledge and little to no experience ever playing around with and exploring the many different languages, Javascript was a new beast for me to tackle. I have only learned Java for the previous courses that I took and the learning curve was immense for me. I had little trouble in the beginning with understanding the syntax and the way to format the lines of code properly. However, when it came to programming real scenarios, it took me months to be able to think on my feet and be able to solve solutions. Even now, my knowledge of programming can be a hit or miss and I get stuck easily. That exact thing is happening again, but worse. Being very used to Java, as that's my only experience with programming, it became second nature to just think of things in terms of how java would handle the problem. Learning new languages is part of the field, and I very much want to be familiar with a whole set of languages to be able to use them whenever required, but I do fear for the road ahead of me.
+
+# Struggles #
+The concept of Athletic Software Engineering seems like something that would actually serve useful to someone like me, an individual that needs constant repetition to get a skill or a concept down. I just have to be able to muster up the discipline to constantly practice to become familiar with the language. I think javascript does well with software engineering since it allows for more freedom and quickness in the shortcuts with the syntax. I just have to become familiar with them so I can utilize everything that's provided. However, learning the new syntax and stylization is giving me trouble, but I'm adapting to the best of my ability. The practice WODs and the coding assignments done online are a big help since they give reasoning behind the purpose of using Javascript over other languages. However, those don't come without their own faults. I have to work problems out in my head and process it before I can properly start working, and the WODs punish me for being the slow programmer that I am at the moment. I'm getting the DNF times for the WODs we've done so far, and I'm tripping over my own thoughts in thinking about the time limit. I think learning a new language along with having to solve problems that took me awhile to be able to handle in Java is making me over think things. I become overwhelmed and shut down as the timer continues and I realize I'm now in the next category of "Sd" or "DNF". I get thoughts of, "I don't know what to do" or "Where do I even begin" and two minutes have already quickly passed. I realize these are problems are familiar to ones I've done or seen before, but I'm just mentally blocking myself. I'm plagued by the fear of failure in my head.
+
+# Adaptation #
+I'm not one to process information quickly and be able to just code straight from a problem set. I'm panicking thinking that I'll fail every WOD since my current abilities aren't enough to get me to where I want to be, but practice makes perfect, and I intend to practice as much as possible. I feel as if I'm thinking too hard on the "in-the-moment" what-ifs and fear of failing every assignment or WOD is holding me back from expanding, but that's just the type of person I am. I just have to restart--or rather, just reboot or refresh my mind. I have to clear my head and focus on the big picture of things. I need to discipline myself to practice regularly to not forget concepts that I know I can do, but forget. I know this won't be the last time this process of learning a new language and struggling is going to happen, so I hope I can gain the skills now to alleviate the pressure I feel next time around.

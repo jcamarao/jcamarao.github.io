@@ -5,18 +5,128 @@
 // Put your custom CSS here if you want to override the defaults.
 // Here are some common customizations for colors
 
-// Customize the background color
-body {
-  // background-color: #f2f2f2;;
+// GLOBAL CSS STARTS //
+// ~~~~~~~~~~~~~~~~~ //
+.border-other {
+  border-top: 10px solid #d5ede4; // gives it the border at top and bottom
+  left: 0;
+  right: 0;
+}
+// GLOBAL CSS ENDS //
+// ~~~~~~~~~~~~~~~ //
+
+// MENU CSS STARTS //
+// ~~~~~~~~~~~~~~~ //
+.menu-buttons {
+  font-family: 'Quicksand', serif !important;
+  font-size: 20px;
+  color: #000 !important;
+  float: right;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
-// Customize the menubar color
-.ui.menu {
-  // background: $background-start;
+p.menu-buttons:hover {
+  color: #d5ede4 !important;
+}
+
+.big.icon:hover {
+  color: #d5ede4 !important;
+}
+
+.big.icon {
+  color: #000000 !important;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~ //
+//  HOME PAGE CSS STARTS //
+// Customize the background color
+body {
+  background-color: #FFFFFF; //white
+  //background-color: #E8E8E8;
+  //background: linear-gradient(to bottom, #99ccff 0%, #99ffcc 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#name {
+  font-family: 'Oxygen', serif !important;
+  font-size: 80px;
+}
+
+#label {
+//   padding-left: 100px;
+  font-size: 30px;
+}
+
+#summary {
+  font-size: 20px;
+}
+
+#home-middle {
+  padding-left: 300px;
+}
+
+#border-home {
+  border-top: 10px solid #d5ede4; // gives it the border
+  left: 0;
+  right: 0;
+}
+
+#image {
+  border: 5px solid #d5ede4; //mint
+  border-radius: 500px;
+}
+
+#middle-text {
+  font-family: 'Raleway', serif !important;
+//   font-family: 'Serif', 'Helvetica Neue', sans-serif;
+  float: middle;
+  padding-top: 160px;
+}
+
+.ui.fluid.circular.image {
+  padding-left: 50px !important;
+  padding-top: 150px;
+}
+
+.huge.icon:hover {
+  color: #d5ede4 !important;
+}
+
+.huge.icon {
+  color: #000000 !important;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 // Customize the home page icon colors
 .icon-color {
-  // color: silver;
+   color: #000000;
 }
 
+// HOME PAGE CSS ENDS //
+// ~~~~~~~~~~~~~~~~~~ //
+
+// PROJECTS PAGE CSS STARTS //
+// ~~~~~~~~~~~~~~~~~~~~~~~~ //
+#projects {
+  padding-top: 50px;
+}
+
+.project-text {
+  font-family: 'Raleway', 'Helvetica Neue', sans-serif !important;
+}
+
+.ui.text.container {
+  max-width: 900px !important;
+}
+
+// Customize the menubar color
+.ui.menu {
+  // background: $background-start;]
+  background : #7a8999; // grayish
+}

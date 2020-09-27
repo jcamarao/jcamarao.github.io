@@ -4,5 +4,10 @@
 *.iml
 _site/
 .sass-cache/
+<<<<<<< HEAD
 .jekyll-cache
 .DS_Store
+=======
+.jekyll-cache/
+start.sh
+>>>>>>> master
