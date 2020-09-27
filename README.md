@@ -1,7 +1,8 @@
+## <h>Check it out [here](http://jcamarao.github.io)!
+
 # Technical Portfolio
+The base of the portfolio is assisted by using: [TechFolio](http://techfolios.github.io). 
 
-This repository hosts a technical portfolio built using [TechFolio](http://techfolios.github.io). 
-
-See the quick start guide for instructions on how to tailor the template to your own needs.
-
+# What is This?
+This is a portfolio about me! It features my projects, a description about me, and a link to my resume! 
 
