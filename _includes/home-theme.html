@@ -4,20 +4,6 @@
 {% assign num_essays = essay_pages.size %}
 {% assign num_projects = project_pages.size %}
 
-<div id="border-home">
-  <div id="ui three item menu">
-    <a href="{{ site.baseurl}}/files/RESUME.pdf" target="_blank" class="item">
-      <p class="menu-buttons">
-        Resume
-      </p>
-    </a>
-    <a href="{{ site.baseurl}}/projects/" class="item">
-      <p class="menu-buttons">
-        Projects
-      </p>
-    </a>
-  </div>
-
   <div class="center-grid" style="
     display: flex;
     width: 100vw !important">
@@ -31,21 +17,19 @@
 
 <div class="ten wide left aligned column">
   <div id="middle-text">
-    <h2 id="name" class="header no-bottom">{{ site.data.bio.basics.name }}</h2>
-    <div class="wrapper">
+    <div class="write-erase">
       <div data-text></div>
-      <span class="item">Computer Science Student</span>
-      <span class="item">Aspiring Software Engineer</span>
-      <h2>Hi, I'm Jake Camarao</h2>
-      <button class="ui inverted basic orange large button">My Portfolio</button>
-      <button class="ui large button">About Me</button>
-  </div>
-    <p id="home-icons" style="text-align: left">
-      {% include home-network-links.html %}
-    </p>
+      <span class="titles">Computer Science Student</span>
+      <span class="titles">Aspiring Software Engineer</span>
+    </div>
+    <h2 id="name" class="header no-bottom">{{ site.data.bio.basics.name }}</h2>
+      <a class="home-redirects">About me</a>
+      <a class="home-redirects" href="{{ site.baseurl }}/projects">Projects</a>
+      <a class="home-redirects">Resume</a>
+      <a class="home-redirects">Contact Me</a>
   </div>
 </div>
-</div>
+  
 </div>
 </div>
 
@@ -87,5 +71,5 @@
       }
     };
 
-    writingAll('item', 'data-text');
+    writingAll('titles', 'data-text');
 </script>
