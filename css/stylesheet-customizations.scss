@@ -38,12 +38,9 @@ body {
   background-color: #FFFFFF; //white
   //background-color: #E8E8E8;
   //background: linear-gradient(to bottom, #99ccff 0%, #99ffcc 100%);
+  border-top: 5px solid #d5ede4 !important;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#border-home {
-  border: 5px solid #d5ede4 !important;
 }
 
 .center-grid {
@@ -121,6 +118,16 @@ body {
 .ui.text.container {
   max-width: 900px !important;
 }
+
+// Missing page CSS
+
+#missing-page {
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 20px;
+}
+
+// end page css //
 
 // Customize the menubar color
 .ui.menu {
