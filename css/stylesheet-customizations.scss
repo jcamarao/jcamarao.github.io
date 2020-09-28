@@ -5,16 +5,6 @@
 // Put your custom CSS here if you want to override the defaults.
 // Here are some common customizations for colors
 
-// GLOBAL CSS STARTS //
-// ~~~~~~~~~~~~~~~~~ //
-.border-other {
-  border-top: 10px solid #d5ede4; // gives it the border at top and bottom
-  left: 0;
-  right: 0;
-}
-// GLOBAL CSS ENDS //
-// ~~~~~~~~~~~~~~~ //
-
 // MENU CSS STARTS //
 // ~~~~~~~~~~~~~~~ //
 .menu-buttons {
@@ -46,11 +36,20 @@ p.menu-buttons:hover {
 // Customize the background color
 body {
   background-color: #FFFFFF; //white
-  border: 5px solid #d5ede4; // gives it the border
   //background-color: #E8E8E8;
   //background: linear-gradient(to bottom, #99ccff 0%, #99ffcc 100%);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+#border-home {
+  border: 5px solid #d5ede4 !important;
+}
+
+.center-grid {
+  position: fixed;
+  top: 9vh;
+  left: 4vw;
 }
 
 #name {
@@ -89,10 +88,16 @@ body {
   cursor: pointer;
 }
 
+#wiring {
+  margin-left: 55px;
+}
+
 .home-redirects {
   color: #000000 !important;
-  font-size: 20px;
-  margin-right: 40px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 21px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 // Customize the home page icon colors

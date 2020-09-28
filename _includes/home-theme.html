@@ -4,6 +4,8 @@
 {% assign num_essays = essay_pages.size %}
 {% assign num_projects = project_pages.size %}
 
+<div id="border-home">
+
   <div class="center-grid" style="
     display: flex;
     width: 100vw !important">
@@ -19,17 +21,18 @@
   <div id="middle-text">
     <div class="write-erase">
       <div data-text></div>
-      <span class="titles">Computer Science Student</span>
+      <span class="titles">Undergraduate Computer Science Student</span>
       <span class="titles">Aspiring Software Engineer</span>
     </div>
     <h2 id="name" class="header no-bottom">{{ site.data.bio.basics.name }}</h2>
-      <a class="home-redirects">About me</a>
+    <div id="wiring">
       <a class="home-redirects" href="{{ site.baseurl }}/projects">Projects</a>
-      <a class="home-redirects" href="{{ site.baseurl}}/files/RESUME.pdf">Resume</a>
-      <a class="home-redirects">Contact Me</a>
+      <a class="home-redirects" href="{{ site.baseurl}}/files/RESUME.pdf" target="_blank">Resume</a>
+      <a class="home-redirects" href="{{ site.baseurl }}/contact">Contact Me</a>
+  </div>
   </div>
 </div>
-  
+</div>
 </div>
 </div>
 
