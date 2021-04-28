@@ -1,7 +1,7 @@
 ---
 layout: essay
 type: essay
-title: Framework, More like MoreWork
+title: Framework, More like More Work
 # All dates must be YYYY-MM-DD format!
 date: 2019-10-10
 labels:
