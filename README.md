@@ -1,5 +1,7 @@
 # portfolio
 
+## TODO - Under Construction
+
 ## Project setup
 ```
 npm install
