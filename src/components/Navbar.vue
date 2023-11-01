@@ -7,8 +7,8 @@
   </div>
   <div id="desktop" v-else>
     <div id="desktop-navbar">
-      <h1 class="desktop-nav-text">desktop</h1>
-      <h1 class="desktop-nav-text">Lorem ipsum dolor sit amet</h1>
+      <h1 id="desktop-nav-text-top">desktop</h1>
+      <h1 id="desktop-nav-text-bottom">Lorem ipsum dolor sit amet</h1>
     </div>
   </div>
 </template>
@@ -54,13 +54,20 @@
     top: 0px;
     background-color: #131516;
     font-weight: bold;
-    height: 10vh;
+    height: 12vh;
     width: 100vw;
 
   }
-  .desktop-nav-text{
+  #desktop-nav-text-top{
     text-align: center;
     top: 10px;
+    color: rgb(174, 194, 211);
+    font-size: 1.5vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+  #desktop-nav-text-bottom{
+    text-align: center;
     color: rgb(174, 194, 211);
     font-size: 1.5vw;
     font-family: 'Courier New', Courier, monospace;
