@@ -1,20 +1,16 @@
 <template>
     <div id="mobile" v-if="isMobile()">
         <div id="mobile-welcome">
-            <div id="mobile-welcome-text-properties">
-                <span class="mobile-welcome-text">{{ welcomeMessage }}</span>
-                <span class="mobile-cursor">|</span>
-                <span class="cursor" :class="{ typing: typing }">&nbsp;</span>
-            </div>
+            <span class="mobile-welcome-text">{{ welcomeMessage }}</span>
+            <span class="mobile-cursor">|</span>
+            <span class="cursor" :class="{ typing: typing }">&nbsp;</span>
         </div>
     </div>
     <div id="not-mobile" v-else>
         <div id="desktop-welcome">
-            <div id="desktop-welcome-text-properties">
-                <span class="desktop-welcome-text">{{ welcomeMessage }}</span>
-                <span class="desktop-cursor">|</span>
-                <span class="cursor" :class="{ typing: typing }">&nbsp;</span>
-            </div>
+            <span class="desktop-welcome-text">{{ welcomeMessage }}</span>
+            <span class="desktop-cursor">|</span>
+            <span class="cursor" :class="{ typing: typing }">&nbsp;</span>
         </div>
     </div>
 </template>
@@ -120,25 +116,25 @@
         width: 100%;
         z-index: 99;
     }
-    #mobile-welcome-text-properties span.mobile-welcome-text {
+    .mobile-welcome-text {
+        position: relative;
+        top: 30%;
         font-size: 5vw;
         font-weight: normal;
         justify-content: center;
         align-items: center;
-    }
-    #mobile-welcome-text {
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
     }
     .mobile-cursor {
+        position: relative;
+        top: 30%;
         font-size: 5vw;
         color: #2c3e50;
         -webkit-animation: 1s blink step-end infinite;
         -moz-animation: 1s blink step-end infinite;
         -ms-animation: 1s blink step-end infinite;
         -o-animation: 1s blink step-end infinite;
-        animation: 1s blink step-end infinite;   
+        animation: 1s blink step-end infinite;  
     }
     #desktop-welcome {
         position: fixed;
@@ -148,18 +144,18 @@
         width: 100%;
         z-index: 99;
     }
-    #desktop-welcome-text-properties span.desktop-welcome-text {
+    .desktop-welcome-text {
+        position: relative;
+        top: 30%;
         font-size: 3vw;
         font-weight: normal;
         justify-content: center;
         align-items: center;
-    }
-    .desktop-welcome-text {
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
     }
     .desktop-cursor {
+        position: relative;
+        top: 30%;
         font-size: 3vw;
         color: #2c3e50;
         -webkit-animation: 1s blink step-end infinite;
