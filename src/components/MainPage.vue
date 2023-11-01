@@ -1,12 +1,12 @@
 <template>
   <div id="mobile" v-if="isMobile()">
     <div id="mobile-navbar">
-      <h1>mobile</h1>
+      <h1></h1>
     </div>
   </div>
   <div id="not-mobile" v-else>
     <div id="desktop-navbar">
-      <h1>desktop</h1>
+      <h1></h1>
     </div>
   </div>
 </template>
@@ -27,4 +27,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#mobile {
+  background-color: #131516;
+}
+#desktop {
+  background-color: #131516;
+}
 </style>

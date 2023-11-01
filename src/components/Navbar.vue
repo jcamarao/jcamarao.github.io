@@ -1,12 +1,14 @@
 <template>
   <div id="mobile" v-if="isMobile()">
     <div id="mobile-navbar">
-      <h1>mobile</h1>
+      <h1 class="mobile-nav-text">mobile</h1>
+      <h1 class="mobile-nav-text">Lorem ipsum dolor sit amet</h1>
     </div>
   </div>
-  <div id="not-mobile" v-else>
+  <div id="desktop" v-else>
     <div id="desktop-navbar">
-      <h1>desktop</h1>
+      <h1 class="desktop-nav-text">desktop</h1>
+      <h1 class="desktop-nav-text">Lorem ipsum dolor sit amet</h1>
     </div>
   </div>
 </template>
@@ -28,15 +30,39 @@
   
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #terminal-bar {
-    background-color: #ffffff;
+  div {
+    margin-left: calc(-50vw + 50%);
+  }
+  #mobile-navbar {
+    position: fixed;
+    top: 0px;
+    background-color: #131516;
+    font-weight: bold;
+    height: 8vh;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+  .mobile-nav-text{
+    text-align: center;
+    color: rgb(174, 194, 211);
+    font-size: 3vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  } 
+  #desktop-navbar { 
+    position: fixed;
+    top: 0px;
+    background-color: #131516;
     font-weight: bold;
     height: 10vh;
-    width: 100%;
+    width: 100vw;
+
   }
-  h1 {
+  .desktop-nav-text{
     text-align: center;
-    font-size: 3vw;
+    top: 10px;
+    color: rgb(174, 194, 211);
+    font-size: 1.5vw;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
   }
