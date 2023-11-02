@@ -1,23 +1,25 @@
 <template>
     <div id="mobile" v-if="isMobile()">
         <div id="mobile-welcome">
+            <div v-if="welcomeFinished"><img id="mobile-pic" :src=(image) /></div>
             <span class="mobile-welcome-text">{{ welcomeMessage }}</span>
             <span class="mobile-cursor">|</span>
             <div class="mobile-wrapper">
-                <span id="mobile-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
-                <span id="mobile-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
-                <span id="mobile-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+                <span id="mobile-transition-trigger-left" v-if="pictureVisible">{{ revealLeft }}</span>
+                <span id="mobile-transition-trigger" v-if="pictureVisible">{{ reveal }}</span>
+                <span id="mobile-transition-trigger-right" v-if="pictureVisible">{{ revealRight }}</span>
             </div>
         </div>
     </div>
     <div id="not-mobile" v-else>
         <div id="desktop-welcome">
+            <div v-if="welcomeFinished"><img id="desktop-pic" :src=(image) /></div>
             <span class="desktop-welcome-text">{{ welcomeMessage }}</span>
             <span class="desktop-cursor">|</span>
             <div class="desktop-wrapper">
-                <span id="desktop-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
-                <span id="desktop-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
-                <span id="desktop-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+                <span id="desktop-transition-trigger-left" v-if="pictureVisible">{{ revealLeft }}</span>
+                <span id="desktop-transition-trigger" v-if="pictureVisible">{{ reveal }}</span>
+                <span id="desktop-transition-trigger-right" v-if="pictureVisible">{{ revealRight }}</span>
             </div>
         </div>
     </div>
@@ -25,6 +27,7 @@
   
 <script>
     import { ref, onMounted } from 'vue'
+    import image from '../assets/self.png'
 
     export default {
         name: "Welcome",
@@ -44,6 +47,7 @@
             let welcomeMessage = ref("")
             let typing = ref(false)
             let welcomeFinished = ref(false)
+            let pictureVisible = ref(false)
             let arrayPos = ref(0)
             let stringPos = ref(0)
             
@@ -62,7 +66,7 @@
                 if (arrayPos.value == messages.value.length-1) {
                     if (stringPos.value == messages.value[arrayPos.value].length) {
                         typing.value = false
-                        welcomeFinished.value = true
+                        setTimeout(showImage, delayTimer.value-500)
                     }
                     else {
                         if (!typing.value) typing.value = true
@@ -109,11 +113,26 @@
                     }
                 }
             }
+            /*
+            * method just to delay and trigger image
+            */ 
+            function showImage() {
+                welcomeFinished.value = true;
+                setTimeout(showButton, delayTimer.value-200)
+            }
+            /*
+            * method just to delay and show button
+            */ 
+            function showButton() {
+                pictureVisible.value = true;
+            }
+
             
             /* lifestyle hooks */
             // onMounted() runs once the component is mounted onto the page
             onMounted(() => setTimeout(typeEffect, delayTimer.value + 200))
-            return { isMobile, welcomeMessage, typing, welcomeFinished, reveal, revealLeft, revealRight }
+            return { isMobile, welcomeMessage, typing, welcomeFinished, 
+                image, pictureVisible, reveal, revealLeft, revealRight }
         }
     }
 
@@ -152,6 +171,115 @@
         width: 100%;
         z-index: 99;
     }
+    /* css of pic of me */
+    #mobile-pic {
+        position: absolute;
+        border: 5px solid #5368b0;
+        top: 1vh;
+        height: 40vw;
+        width: 40vw;
+        left: 30vw;
+        border-radius:50% 50% 50% 50%; 
+        -webkit-animation: bounce-in 1s ease;
+        -moz-animation: bounce-in 1s ease;
+        -ms-animation: bounce-in 1s ease;
+        -o-animation: bounce-in 1s ease;
+        animation: bounce-in 1s ease;
+    }
+    #desktop-pic {
+        position: absolute;
+        border: 5px solid #5368b0;
+        top: 1vh;
+        height: 20vw;
+        width: 20vw;
+        left: 40vw;
+        border-radius:50% 50% 50% 50%; 
+        -webkit-animation: bounce-in 1s ease;
+        -moz-animation: bounce-in 1s ease;
+        -ms-animation: bounce-in 1s ease;
+        -o-animation: bounce-in 1s ease;
+        animation: bounce-in 1s ease;
+    }
+    @keyframes bounce-in {
+        0% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% { 
+            transform: scale(.9); 
+        }
+        100% { 
+            transform: scale(1);
+        }
+    }
+    @-moz-keyframes bounce-in {
+        0% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% { 
+            transform: scale(.9); 
+        }
+        100% { 
+            transform: scale(1);
+        }
+    }
+    @-webkit-keyframes bounce-in {
+        0% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% { 
+            transform: scale(.9); 
+        }
+        100% { 
+            transform: scale(1);
+        }
+    }
+    @-ms-keyframes bounce-in {
+        0% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% { 
+            transform: scale(.9); 
+        }
+        100% { 
+            transform: scale(1);
+        }
+    }
+    @-o-keyframes bounce-in {
+        0% {
+            opacity: 0;
+            transform: scale(.3);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        70% { 
+            transform: scale(.9); 
+        }
+        100% { 
+            transform: scale(1);
+        }
+    }
     /* css for the text being written on screen */
     .mobile-welcome-text {
         position: relative;
@@ -166,7 +294,7 @@
     .desktop-welcome-text {
         position: relative;
         color: #5368b0;
-        top: 30%;
+        top: 40%;
         font-size: 3vw;
         font-weight: normal;
         justify-content: center;
@@ -187,7 +315,7 @@
     }
     .desktop-cursor {
         position: relative;
-        top: 30%;
+        top: 40%;
         font-size: 3vw;
         color: #5368b0;
         -webkit-animation: 1s blink step-end infinite;
@@ -254,7 +382,7 @@
         justify-content: center;
     }
     .desktop-wrapper {
-        top: 40%;
+        top: 50%;
         left: 35%;
         font-size: 3vw;
         width: 30vw;
