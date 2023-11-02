@@ -3,18 +3,22 @@
         <div id="mobile-welcome">
             <span class="mobile-welcome-text">{{ welcomeMessage }}</span>
             <span class="mobile-cursor">|</span>
-            <span id="mobile-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
-            <span id="mobile-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
-            <span id="mobile-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+            <div class="mobile-wrapper">
+                <span id="mobile-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
+                <span id="mobile-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
+                <span id="mobile-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+            </div>
         </div>
     </div>
     <div id="not-mobile" v-else>
         <div id="desktop-welcome">
             <span class="desktop-welcome-text">{{ welcomeMessage }}</span>
             <span class="desktop-cursor">|</span>
-            <span id="desktop-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
-            <span id="desktop-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
-            <span id="desktop-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+            <div class="desktop-wrapper">
+                <span id="desktop-transition-trigger-left" v-if="welcomeFinished">{{ revealLeft }}</span>
+                <span id="desktop-transition-trigger" v-if="welcomeFinished">{{ reveal }}</span>
+                <span id="desktop-transition-trigger-right" v-if="welcomeFinished">{{ revealRight }}</span>
+            </div>
         </div>
     </div>
 </template>
@@ -125,15 +129,25 @@
     #mobile-welcome {
         position: fixed;
         top: 0;
-        background-color: #131516;
         height: 100%;
         width: 100%;
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../assets/welcome-waves.svg');
         z-index: 99;
     }
     #desktop-welcome {
         position: fixed;
+        aspect-ratio: 960/300;
         top: 0;
-        background-color: #131516;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../assets/welcome-waves.svg');
         height: 100%;
         width: 100%;
         z-index: 99;
@@ -141,6 +155,7 @@
     /* css for the text being written on screen */
     .mobile-welcome-text {
         position: relative;
+        color: #5368b0;
         top: 30%;
         font-size: 5vw;
         font-weight: normal;
@@ -150,6 +165,7 @@
     }
     .desktop-welcome-text {
         position: relative;
+        color: #5368b0;
         top: 30%;
         font-size: 3vw;
         font-weight: normal;
@@ -162,7 +178,7 @@
         position: relative;
         top: 30%;
         font-size: 5vw;
-        color: #2c3e50;
+        color: #5368b0;
         -webkit-animation: 1s blink step-end infinite;
         -moz-animation: 1s blink step-end infinite;
         -ms-animation: 1s blink step-end infinite;
@@ -173,7 +189,7 @@
         position: relative;
         top: 30%;
         font-size: 3vw;
-        color: #2c3e50;
+        color: #5368b0;
         -webkit-animation: 1s blink step-end infinite;
         -moz-animation: 1s blink step-end infinite;
         -ms-animation: 1s blink step-end infinite;
@@ -186,7 +202,7 @@
             color: transparent;
         }
         50% {
-            color: #2c3e50;
+            color: #5368b0;
         }
     }
     @-moz-keyframes blink {
@@ -195,7 +211,7 @@
             color: transparent;
         }
         50% {
-            color: #2c3e50;
+            color: #5368b0;
         }
     }
     @-webkit-keyframes blink {
@@ -204,7 +220,7 @@
             color: transparent;
         }
         50% {
-            color: #2c3e50;
+            color: #5368b0;
         }
     }
     @-ms-keyframes  blink {
@@ -213,7 +229,7 @@
             color: transparent;
         }
         50% {
-            color: #2c3e50;
+            color: #5368b0;
         }
     }
     @-o-keyframes blink {
@@ -222,166 +238,252 @@
             color: transparent;
         }
         50% {
-            color: #2c3e50;
+            color: #5368b0;
         }
     }
     /* css for the transition trigger */
-    #mobile-transition-trigger {
-        position: fixed;
+    .mobile-wrapper {
         top: 35%;
-        left: 25.5%;
+        left: 25%;
         font-size: 5vw;
+        width: 30vw;
+        display: table;
         font-weight: normal;
         text-align: center;
-        -webkit-animation: expand-center 1s linear;
-        -moz-animation: expand-center 1s linear;
-        -ms-animation: expand-center 1s linear;
-        -o-animation: expand-center 1s linear;
-        animation: expand-center 1s linear;
+        position: absolute;
+        justify-content: center;
     }
-    #mobile-transition-trigger-left {
-        position: fixed;
-        top: 35%;
-        left: 49%;
-        font-size: 5vw;
-        font-weight: normal;
-        text-align: center;
-        -webkit-animation: slide-left 1s linear forwards;
-        -moz-animation: slide-left 1s linear forwards;
-        -ms-animation: slide-left 1s linear forwards;
-        -o-animation: slide-left 1s linear forwards;
-        animation: slide-left 1s linear forwards;
-    }
-    #mobile-transition-trigger-right {
-        position: fixed;
-        top: 35%;
-        left: 50%;
-        font-size: 5vw;
-        font-weight: normal;
-        text-align: center;
-        -webkit-animation: slide-right 1s linear forwards;
-        -moz-animation: slide-right 1s linear forwards;
-        -ms-animation: slide-right 1s linear forwards;
-        -o-animation: slide-right 1s linear forwards;
-        animation: slide-right 1s linear forwards;
-    }
-    #desktop-transition-trigger {
-        position: fixed;
+    .desktop-wrapper {
         top: 40%;
         left: 35%;
         font-size: 3vw;
+        width: 30vw;
+        display: table;
         font-weight: normal;
         text-align: center;
-        -webkit-animation: expand-center 1s linear;
-        -moz-animation: expand-center 1s linear;
-        -ms-animation: expand-center 1s linear;
-        -o-animation: expand-center 1s linear;
-        animation: expand-center 1s linear;
+        position: absolute;
+        justify-content: center;
+    }
+    #mobile-transition-trigger {
+        width: 33.33%;
+        color: #5368b0;
+        white-space: nowrap;
+        -webkit-animation: expand-center 0.5s linear;
+        -moz-animation: expand-center 0.5s linear;
+        -ms-animation: expand-center 0.5s linear;
+        -o-animation: expand-center 0.5s linear;
+        animation: expand-center 0.5s linear;
+    }
+    #mobile-transition-trigger-left {
+        position: fixed;
+        color: #5368b0;
+        width: 33.33%;
+        -webkit-animation: mobile-slide-left 0.5s linear forwards;
+        -moz-animation: mobile-slide-left 0.5s linear forwards;
+        -ms-animation: mobile-slide-left 0.5s linear forwards;
+        -o-animation: mobileslide-left 0.5s linear forwards;
+        animation: mobile-slide-left 0.5s linear forwards;
+    }
+    #mobile-transition-trigger-right {
+        position: fixed;
+        color: #5368b0;
+        width: 33.33%;
+        -webkit-animation: mobile-slide-right 0.5s linear forwards;
+        -moz-animation: mobile-slide-right 0.5s linear forwards;
+        -ms-animation: mobile-slide-right 0.5s linear forwards;
+        -o-animation: mobile-slide-right 0.5s linear forwards;
+        animation: mobile-slide-right 0.5s linear forwards;
+    }
+    #desktop-transition-trigger {
+        width: 33.33%;
+        color: #5368b0;
+        white-space: nowrap;
+        -webkit-animation: expand-center 0.5s linear;
+        -moz-animation: expand-center 0.5s linear;
+        -ms-animation: expand-center 0.5s linear;
+        -o-animation: expand-center 0.5s linear;
+        animation: expand-center 0.5s linear;
     }
     #desktop-transition-trigger-left {
         position: fixed;
-        top: 40%;
-        left: 49%;
-        font-size: 3vw;
-        font-weight: normal;
-        text-align: center;
-        -webkit-animation: slide-left 1s linear forwards;
-        -moz-animation: slide-left 1s linear forwards;
-        -ms-animation: slide-left 1s linear forwards;
-        -o-animation: slide-left 1s linear forwards;
-        animation: slide-left 1s linear forwards;
+        color: #5368b0;
+        width: 33.33%;
+        -webkit-animation: desktop-slide-left 0.5s linear forwards;
+        -moz-animation: desktop-slide-left 0.5s linear forwards;
+        -ms-animation: desktop-slide-left 0.5s linear forwards;
+        -o-animation: desktop-slide-left 0.5s linear forwards;
+        animation: desktop-slide-left 0.5s linear forwards;
     }
     #desktop-transition-trigger-right {
         position: fixed;
-        top: 40%;
-        left: 50%;
-        font-size: 3vw;
-        font-weight: normal;
-        text-align: center;
-        -webkit-animation: slide-right 1s linear forwards;
-        -moz-animation: slide-right 1s linear forwards;
-        -ms-animation: slide-right 1s linear forwards;
-        -o-animation: slide-right 1s linear forwards;
-        animation: slide-right 1s linear forwards;
+        color: #5368b0;
+        width: 33.33%;
+        -webkit-animation: desktop-slide-right 0.5s linear forwards;
+        -moz-animation: desktop-slide-right 0.5s linear forwards;
+        -ms-animation: desktop-slide-right 0.5s linear forwards;
+        -o-animation: desktop-slide-right 0.5s linear forwards;
+        animation: desktop-slide-right 0.5s linear forwards;
     }
-    @keyframes slide-left {
+    /* mobile slides */
+    @keyframes mobile-slide-left {
         from {
-            transform: translateX(0%)
+            transform: translateX(20%)
         }
         to {
-            transform: translateX(-2000%)
+            transform: translateX(-55%)
         }
     }
-    @-moz-keyframes slide-left {
+    @-moz-keyframes mobile-slide-left {
         from {
-            transform: translateX(0%)
+            transform: translateX(20)
         }
         to {
-            transform: translateX(-2000%)
+            transform: translateX(-55%)
         }
     }
-    @-webkit-keyframes slide-left {
+    @-webkit-keyframes mobile-slide-left {
         from {
-            transform: translateX(0%)
+            transform: translateX(20%)
         }
         to {
-            transform: translateX(-2000%)
+            transform: translateX(-55%)
         }
     }
-    @-ms-keyframes slide-left {
+    @-ms-keyframes mobile-slide-left {
         from {
-            transform: translateX(0%)
+            transform: translateX(20%)
         }
         to {
-            transform: translateX(-2000%)
+            transform: translateX(55%)
         }
     }
-    @-o-keyframes slide-left {
+    @-o-keyframes mobile-slide-left {
         from {
-            transform: translateX(0%)
+            transform: translateX(20%)
         }
         to {
-            transform: translateX(-2000%)
+            transform: translateX(55%)
         }
     }
-    @keyframes slide-right {
+    @keyframes mobile-slide-right {
         from {
-            transform: translateX(0%)
+            transform: translateX(-120%)
         }
         to {
-            transform: translateX(1950%)
+            transform: translateX(-47%)
         }
     }
-    @-moz-keyframes slide-right {
+    @-moz-keyframes mobile-slide-right {
         from {
-            transform: translateX(0%)
+            transform: translateX(-120%)
         }
         to {
-            transform: translateX(1950%)
+            transform: translateX(-47%)
         }
     }
-    @-webkit-keyframes slide-right {
+    @-webkit-keyframes mobile-slide-right {
         from {
-            transform: translateX(0%)
+            transform: translateX(-120%)
         }
         to {
-            transform: translateX(1950%)
+            transform: translateX(-47%)
         }
     }
-    @-ms-keyframes slide-right {
+    @-ms-keyframes mobile-slide-right {
         from {
-            transform: translateX(0%)
+            transform: translateX(-120%)
         }
         to {
-            transform: translateX(1950%)
+            transform: translateX(-47%)
         }
     }
-    @-o-keyframes slide-right {
+    @-o-keyframes mobile-slide-right {
         from {
-            transform: translateX(0%)
+            transform: translateX(-120%)
         }
         to {
-            transform: translateX(1950%)
+            transform: translateX(-47%)
+        }
+    }
+    /* desktop slides */
+    @keyframes desktop-slide-left {
+        from {
+            transform: translateX(-15%)
+        }
+        to {
+            transform: translateX(-55%)
+        }
+    }
+    @-moz-keyframes desktop-slide-left {
+        from {
+            transform: translateX(-15%)
+        }
+        to {
+            transform: translateX(-55%)
+        }
+    }
+    @-webkit-keyframes desktop-slide-left {
+        from {
+            transform: translateX(-15%)
+        }
+        to {
+            transform: translateX(-55%)
+        }
+    }
+    @-ms-keyframes desktop-slide-left {
+        from {
+            transform: translateX(-15%)
+        }
+        to {
+            transform: translateX(55%)
+        }
+    }
+    @-o-keyframes desktop-slide-left {
+        from {
+            transform: translateX(-10%)
+        }
+        to {
+            transform: translateX(55%)
+        }
+    }
+    @keyframes desktop-slide-right {
+        from {
+            transform: translateX(-90%)
+        }
+        to {
+            transform: translateX(-47%)
+        }
+    }
+    @-moz-keyframes desktop-slide-right {
+        from {
+            transform: translateX(-90%)
+        }
+        to {
+            transform: translateX(-47%)
+        }
+    }
+    @-webkit-keyframes desktop-slide-right {
+        from {
+            transform: translateX(-90%)
+        }
+        to {
+            transform: translateX(-47%)
+        }
+    }
+    @-ms-keyframes desktop-slide-right {
+        from {
+            transform: translateX(-90%)
+        }
+        to {
+            transform: translateX(-47%)
+        }
+    }
+    @-o-keyframes desktop-slide-right {
+        from {
+            transform: translateX(-90%)
+        }
+        to {
+            transform: translateX(-47%)
         }
     }
     @keyframes expand-center {
