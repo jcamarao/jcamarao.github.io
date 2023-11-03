@@ -1,4 +1,6 @@
 <template>
+  <!-- YOU NEED TO SPECIFY THIS FOR SAFARI FOR THEIR NEW THEME-COLOR FEATURE OR YOU WILL CRY -->
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e181f" />
   <Welcome/>
   <!-- <Navbar/> -->
   <!-- <MainPage/> -->
@@ -16,6 +18,7 @@
       // Navbar,
       // MainPage
     }
+
   }
 </script>
 
