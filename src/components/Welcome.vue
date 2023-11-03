@@ -1,7 +1,9 @@
 <template>
+    <!-- YOU NEED TO SPECIFY THIS FOR SAFARI FOR THEIR NEW THEME-COLOR FEATURE OR YOU WILL CRY -->
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e181f" />
     <div id="mobile" v-if="isMobile()">
         <div id="mobile-welcome">
-            <div v-if="welcomeFinished"><img id="mobile-pic" :src=(image) /></div>
+            <!-- <div v-if="welcomeFinished"><img id="mobile-pic" :src="require(image)" /></div> -->
             <span class="mobile-welcome-text">{{ welcomeMessage }}</span>
             <span class="mobile-cursor">|</span>
             <div class="mobile-wrapper">
@@ -13,7 +15,7 @@
     </div>
     <div id="not-mobile" v-else>
         <div id="desktop-welcome">
-            <div v-if="welcomeFinished"><img id="desktop-pic" :src=(image) /></div>
+            <!-- <div v-if="welcomeFinished"><img id="desktop-pic" :src="require(image)" /></div> -->
             <span class="desktop-welcome-text">{{ welcomeMessage }}</span>
             <span class="desktop-cursor">|</span>
             <div class="desktop-wrapper">
@@ -27,7 +29,7 @@
   
 <script>
     import { ref, onMounted } from 'vue'
-    import image from '../assets/self.png'
+    // import image from '../assets/self.png'
 
     export default {
         name: "Welcome",
@@ -131,8 +133,8 @@
             /* lifestyle hooks */
             // onMounted() runs once the component is mounted onto the page
             onMounted(() => setTimeout(typeEffect, delayTimer.value + 200))
-            return { isMobile, welcomeMessage, typing, welcomeFinished, 
-                image, pictureVisible, reveal, revealLeft, revealRight }
+            return { isMobile, welcomeMessage, typing, welcomeFinished,
+                 pictureVisible, reveal, revealLeft, revealRight }
         }
     }
 
@@ -145,60 +147,59 @@
         margin-left: calc(-50vw + 50%);
     }
     /* css for the positioning of the welcome component */
+    #mobile {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        left: 0%;
+        right: 0%;
+        background-color: #0e181f;
+        z-index: 1;
+
+    }
     #mobile-welcome {
         position: fixed;
         top: 0;
-        height: 100%;
-        width: 100%;
-        aspect-ratio: 960/300;
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
+        left: 0%;
+        right: 0%;
+        background-attachment: fixed;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         background-image: url('../assets/welcome-waves.svg');
-        z-index: 99;
+        z-index: 2;
     }
     #desktop-welcome {
         position: fixed;
-        aspect-ratio: 960/300;
         top: 0;
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         background-image: url('../assets/welcome-waves.svg');
-        height: 100%;
-        width: 100%;
-        z-index: 99;
     }
     /* css of pic of me */
     #mobile-pic {
-        position: absolute;
-        border: 5px solid #5368b0;
-        top: 1vh;
+        position: fixed;
+        border: 2px solid #5368b0;
+        top: 2vh;
         height: 40vw;
         width: 40vw;
         left: 30vw;
         border-radius:50% 50% 50% 50%; 
-        -webkit-animation: bounce-in 1s ease;
-        -moz-animation: bounce-in 1s ease;
-        -ms-animation: bounce-in 1s ease;
-        -o-animation: bounce-in 1s ease;
-        animation: bounce-in 1s ease;
     }
     #desktop-pic {
         position: absolute;
-        border: 5px solid #5368b0;
+        border: 2px solid #5368b0;
         top: 1vh;
         height: 20vw;
         width: 20vw;
         left: 40vw;
         border-radius:50% 50% 50% 50%; 
-        -webkit-animation: bounce-in 1s ease;
-        -moz-animation: bounce-in 1s ease;
-        -ms-animation: bounce-in 1s ease;
-        -o-animation: bounce-in 1s ease;
-        animation: bounce-in 1s ease;
     }
     @keyframes bounce-in {
         0% {
@@ -284,7 +285,7 @@
     .mobile-welcome-text {
         position: relative;
         color: #5368b0;
-        top: 30%;
+        top: 35%;
         font-size: 5vw;
         font-weight: normal;
         justify-content: center;
@@ -304,7 +305,7 @@
     /* css for the simulated typing cursor */
     .mobile-cursor {
         position: relative;
-        top: 30%;
+        top: 35%;
         font-size: 5vw;
         color: #5368b0;
         -webkit-animation: 1s blink step-end infinite;
@@ -371,7 +372,7 @@
     }
     /* css for the transition trigger */
     .mobile-wrapper {
-        top: 35%;
+        top: 40%;
         left: 25%;
         font-size: 5vw;
         width: 30vw;
@@ -393,6 +394,8 @@
         justify-content: center;
     }
     #mobile-transition-trigger {
+        margin: 0;
+        padding: 0;
         width: 33.33%;
         color: #5368b0;
         white-space: nowrap;
@@ -403,6 +406,8 @@
         animation: expand-center 0.5s linear;
     }
     #mobile-transition-trigger-left {
+        margin: 0;
+        padding: 0;
         position: fixed;
         color: #5368b0;
         width: 33.33%;
@@ -413,6 +418,8 @@
         animation: mobile-slide-left 0.5s linear forwards;
     }
     #mobile-transition-trigger-right {
+        margin: 0;
+        padding: 0;
         position: fixed;
         color: #5368b0;
         width: 33.33%;

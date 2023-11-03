@@ -1,20 +1,20 @@
 <template>
   <Welcome/>
-  <Navbar/>
-  <MainPage/>
+  <!-- <Navbar/> -->
+  <!-- <MainPage/> -->
 </template>
 
 <script>
   import Welcome from './components/Welcome.vue'
-  import Navbar from './components/Navbar.vue'
-  import MainPage from './components/MainPage.vue'
+  // import Navbar from './components/Navbar.vue'
+  // import MainPage from './components/MainPage.vue'
 
   export default {
     name: 'App',
     components: {
       Welcome,
-      Navbar,
-      MainPage
+      // Navbar,
+      // MainPage
     }
   }
 </script>
