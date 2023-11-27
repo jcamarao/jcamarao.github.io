@@ -1,14 +1,16 @@
 <template>
     <div id="mobile" v-if="isMobile()">
         <div id="mobile-welcome">
-            <img v-if="typingDone" id="mobile-pic" :src="image" />
+            <img @touchend="$emit('showPopup', true)" v-if="typingDone" id="mobile-pic" :src="image" />
             <span class="mobile-welcome-text">{{ welcomeMessage }}<span class="mobile-cursor">|</span></span>
+            <img v-if="typingDone" id="mobile-curved-arrow" :src="arrow" />
         </div>
     </div>
     <div id="not-mobile" v-else>
         <div id="desktop-welcome">
-                <img v-if="typingDone" id="desktop-pic" :src="image" />
+                <img @click="$emit('showPopup', true)" v-if="typingDone" id="desktop-pic" :src="image" />
                 <span class="desktop-welcome-text">{{ welcomeMessage }}<span class="desktop-cursor">|</span></span>
+                <img v-if="typingDone" id="desktop-curved-arrow" :src="arrow" />
         </div>
     </div>
 </template>
@@ -16,6 +18,7 @@
 <script>
     import { ref, onMounted } from 'vue'
     import image from '../assets/self.png'
+    import arrow from '../assets/curved-arrow.svg'
 
     export default {
         name: "Welcome",
@@ -38,6 +41,8 @@
             let pictureVisible = ref(false)
             let arrayPos = ref(0)
             let stringPos = ref(0)
+            
+            let modal = ref(false)
             
             /* 
             * method for controlling the typing effect
@@ -115,12 +120,15 @@
                 pictureVisible.value = true;
             }
 
-            
+            function showPopup() {
+                modal.value = !modal.value
+            }
+
             /* lifestyle hooks */
             // onMounted() runs once the component is mounted onto the page
             onMounted(() => setTimeout(typeEffect, delayTimer.value + 200))
-            return { isMobile, welcomeMessage, typing, image, typingDone, 
-                pictureVisible, reveal, revealLeft, revealRight }
+            return { showPopup, isMobile, welcomeMessage, typing, image, typingDone, 
+                arrow, pictureVisible, reveal, revealLeft, revealRight, modal }
         }
     }
 
@@ -273,6 +281,111 @@
         }
         100% { 
             transform: scale(1);
+        }
+    }
+    /* css for the arrow */
+    #mobile-curved-arrow {
+        position: fixed;
+        top: 33%;
+        height: 15vh;
+        width: 40vw;
+        left: 55%;
+        -webkit-animation: 1s bounce-in-right ease;
+        -moz-animation: 1s bounce-in-right ease;
+        -ms-animation: 1s bounce-in-right ease;
+        -o-animation: 1s bounce-in-right ease;
+        animation: 1s bounce-in-right ease; 
+    }
+    #desktop-curved-arrow {
+        position: fixed;
+        top: 30%;
+        height: 20vh;
+        width: 40vw;
+        left: 42%;
+        -webkit-animation: 1s bounce-in-right ease;
+        -moz-animation: 1s bounce-in-right ease;
+        -ms-animation: 1s bounce-in-right ease;
+        -o-animation: 1s bounce-in-right ease;
+        animation: 1s bounce-in-right ease; 
+    }
+    @keyframes bounce-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(2000px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(-30px);
+        }
+        80% { 
+            transform: translateX(10px); 
+        }
+        100% { 
+            transform: translateX(0); 
+        }
+    }
+    @-moz-keyframes bounce-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(2000px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(-30px);
+        }
+        80% { 
+            transform: translateX(10px); 
+        }
+        100% { 
+            transform: translateX(0); 
+        }
+    }
+    @-webkit-keyframes bounce-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(2000px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(-30px);
+        }
+        80% { 
+            transform: translateX(10px); 
+        }
+        100% { 
+            transform: translateX(0); 
+        }
+    }
+    @-ms-keyframes bounce-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(2000px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(-30px);
+        }
+        80% { 
+            transform: translateX(10px); 
+        }
+        100% { 
+            transform: translateX(0); 
+        }
+    }
+    @-o-keyframes bounce-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(2000px);
+        }
+        60% {
+            opacity: 1;
+            transform: translateX(-30px);
+        }
+        80% { 
+            transform: translateX(10px); 
+        }
+        100% { 
+            transform: translateX(0); 
         }
     }
     /* css for the text being written on screen */
